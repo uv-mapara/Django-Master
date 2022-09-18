@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="card-columns">
+{% for d in data reversed %}
+<div class="card border-success mb-3" style="width: 20rem;">
+<div class="card-header border-success">
+  <h3>
+    {{ d.name }}&nbsp;{{ d.lname }}
+  </h3>
+</div>
+  <div class="card-body">
+    <p class="card-text">Email : {{ d.email }}</p>
+    <p class="card-text">Password : {{ d.passw }}</p>
+  </div>
+  <div class="card-footer bg-transparent border-success">
+    <a class='btn btn-primary' href="{% url 'update' d.id %}">update</a>
+    <a class='btn btn-danger' href="{% url 'delete' d.id %}">delete</a>
+  </div>
+</div>  
+<br>
+{% endfor %}
+<div>
+
+{% endblock %}

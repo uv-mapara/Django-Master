@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<html>
+    <body>
+        <div>
+          {% block content %}
+            <h1>here is your image uploaded from django admin</h1>
+            <ul>
+              
+                    {% for post in object_list %}
+                      <img src="{{ post.images.url}}" alt="">
+                    {% endfor %}
+                  </ul>
+                  {% endblock %}
+        </div>
+    </body>
+</html>
